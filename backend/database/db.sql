@@ -138,3 +138,38 @@ CREATE TABLE IF NOT EXISTS event_teams (
     FOREIGN KEY (event_id) REFERENCES events(event_id),
     FOREIGN KEY (team_id) REFERENCES teams(team_id)
 );
+
+-- 
+-- Junction Tables
+--
+-- Many-to-many relationship between schools and sports
+CREATE TABLE IF NOT EXISTS school_sports (
+    school_id INTEGER NOT NULL,
+    sport_id INTEGER NOT NULL,
+
+    PRIMARY KEY (school_id, sport_id),
+    FOREIGN KEY (school_id) REFERENCES schools (school_id),
+    FOREIGN KEY (sport_id) REFERENCES sports (sport_id)
+);
+
+CREATE TABLE IF NOT EXISTS school_player (
+    school_id INTEGER NOT NULL,
+    player_id INTEGER NOT NULL,
+
+    PRIMARY KEY (school_id, player_id),
+    FOREIGN KEY (school_id) REFERENCES schools(school_id),
+    FOREIGN KEY (player_id) REFERENCES players(player_id)
+);
+
+CREATE TABLE IF NOT EXISTS news_school_sport_team (
+    news_id INTEGER NOT NULL,
+    school_id INTEGER NOT NULL,
+    sport_id INTEGER NOT NULL,
+    team_id INTEGER NOT NULL,
+
+    PRIMARY KEY (news_id, school_id, sport_id, team_id),
+    FOREIGN KEY (news_id) REFERENCES news(news_id),
+    FOREIGN KEY (school_id) REFERENCES schools(school_id),
+    FOREIGN KEY (sport_id) REFERENCES sports(sport_id),
+    FOREIGN KEY (team_id) REFERENCES teams(team_id)
+);

@@ -36,6 +36,8 @@ const SportsPage = () => {
     const handleSportClick = (sportName: string) => {
         const sportUrl = `/sports/${sportName.toLowerCase()}`;
         console.log("Navigating to:", sportUrl);
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
         navigate(sportUrl);
     };
 

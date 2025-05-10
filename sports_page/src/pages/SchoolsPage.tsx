@@ -39,6 +39,8 @@ const SchoolsPage = () => {
   const handleSchoolClick = (school_id: number) => {
     const schoolUrl = `/schools/${school_id}`;
     console.log("Navigating to:", schoolUrl);
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
     navigate(schoolUrl);
 };
 

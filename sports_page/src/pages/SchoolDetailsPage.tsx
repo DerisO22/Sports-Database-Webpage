@@ -48,7 +48,11 @@ const SchoolDetails = () => {
         return (
             <div className="page_container">
                 <h2>Error: {error || 'School not found'}</h2>
-                <button className="sport_button" onClick={() => navigate('/schools')}>
+                <button className="sport_button" onClick={() => {
+                    navigate('/schools');
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                    }}>
                     Back to Schools
                 </button>
             </div>
@@ -71,7 +75,11 @@ const SchoolDetails = () => {
                     </div>
                 </>
             )}
-            <button className="sport_button" onClick={() => navigate('/schools')}>
+            <button className="sport_button" onClick={() => {
+                navigate('/schools');
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+                }}>
                 Back to Schools
             </button>
         </div>

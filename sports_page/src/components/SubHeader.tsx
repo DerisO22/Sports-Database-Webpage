@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom'
 
 const SubHeader = () => {
 
+    const handleScrollTop = () => {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
     return (
         <div className="subheaderMenuContainer">
             {/* <div className="headerLogo">
@@ -10,11 +15,11 @@ const SubHeader = () => {
             </div> */}
 
             <div className="headerMenu">
-                <Link to="/" className="headerMenuItem">Home</Link>
-                <Link to="/sports" className="headerMenuItem">Sports</Link>
-                <Link to="/schools" className="headerMenuItem">Schools</Link>
-                <Link to="/news" className="headerMenuItem">News</Link>
-                <Link to='/players' className='headerMenuItem'>Players</Link>
+                <Link onClick={() => handleScrollTop()} to="/" className="headerMenuItem">Home</Link>
+                <Link onClick={() => handleScrollTop()} to="/sports" className="headerMenuItem">Sports</Link>
+                <Link onClick={() => handleScrollTop()} to="/schools" className="headerMenuItem">Schools</Link>
+                <Link onClick={() => handleScrollTop()} to="/news" className="headerMenuItem">News</Link>
+                <Link onClick={() => handleScrollTop()} to='/players' className='headerMenuItem'>Players</Link>
             </div>
         </div>
     )

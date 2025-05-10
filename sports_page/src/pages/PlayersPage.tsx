@@ -38,6 +38,8 @@ const Player = () => {
   const handleSportClick = (player_id: number) => {
     const playerUrl = `/players/player_profile/${player_id}`;
     console.log("Navigating to:", playerUrl);
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
     navigate(playerUrl);
 };
 

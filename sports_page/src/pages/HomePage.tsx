@@ -20,7 +20,12 @@ const HomePage = () => {
                 <div className='feature_card'>
                     <h2>Sports Coverage</h2>
                     <p>Comprehensive statistics across multiple sports</p>
-                    <button onClick={() => navigate('/sports')} className='feature_button'>
+                    <button onClick={() => {
+                        navigate('/sports');
+                        document.body.scrollTop = 0;
+                        document.documentElement.scrollTop = 0;
+                        }} 
+                        className='feature_button'>
                         Explore Sports
                     </button>
                 </div>
@@ -28,7 +33,12 @@ const HomePage = () => {
                 <div className='feature_card'>
                     <h2>Player Stats</h2>
                     <p>Detailed player performance analytics</p>
-                    <button onClick={() => navigate('/players')} className='feature_button'>
+                    <button onClick={() => {
+                        navigate('/players');
+                        document.body.scrollTop = 0;
+                        document.documentElement.scrollTop = 0;
+                        }} 
+                        className='feature_button'>
                         View Players
                     </button>
                 </div>
@@ -36,7 +46,12 @@ const HomePage = () => {
                 <div className='feature_card'>
                     <h2>School Teams</h2>
                     <p>Track your favorite school teams</p>
-                    <button onClick={() => navigate('/schools')} className='feature_button'>
+                    <button onClick={() => {
+                        navigate('/schools')
+                        document.body.scrollTop = 0;
+                        document.documentElement.scrollTop = 0;
+                        }} 
+                        className='feature_button'>
                         Find Schools
                     </button>
                 </div>
@@ -44,7 +59,12 @@ const HomePage = () => {
 
             <section className='news_preview'>
                 <h2>Latest Sports News</h2>
-                <button onClick={() => navigate('/news')} className='news_button'>
+                <button onClick={() => {
+                    navigate('/news')
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                    }} 
+                    className='news_button'>
                     Read More News
                 </button>
             </section>
